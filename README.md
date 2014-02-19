@@ -1,4 +1,4 @@
 scape-jp2-qa
 ============
 
-Verification of jp2 images against a control policy
+Validation of JP2 meta data against a control policy

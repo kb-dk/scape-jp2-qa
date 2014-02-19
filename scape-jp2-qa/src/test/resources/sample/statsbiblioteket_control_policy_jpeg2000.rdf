@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY control-policy "http://purl.org/DP/control-policy#">
+    <!ENTITY measures "http://purl.org/DP/quality/measures#">
+    <!ENTITY modalities "http://purl.org/DP/control-policy/modalities#">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY preservation-case "http://purl.org/DP/preservation-case#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+
+<rdf:RDF xmlns="http://www.statsbiblioteket.dk/policies#"
+     xml:base="http://www.statsbiblioteket.dk/policies/"
+     xmlns:control-policy="http://purl.org/DP/control-policy#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:measures="http://purl.org/DP/quality/measures#"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:preservation-case="http://purl.org/DP/preservation-case#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     >
+
+    <org:Organization rdf:about="danish_state_and_university_library">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <org:identifier>The Danish State and University Library</org:identifier>
+    </org:Organization>
+    
+    <owl:NamedIndividual rdf:about="danish_newspapers">
+        <rdf:type rdf:resource="&preservation-case;ContentSet"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="danish_newspapers">
+        <rdf:type rdf:resource="&preservation-case;PreservationCase"/>
+        <skos:prefLabel>Danish newspapers</skos:prefLabel>
+        
+        <!-- Colour space test -->
+        <!-- <s:rule context="/jpylyzer/properties/jp2HeaderBox/colourSpecificationBox"> -->
+        <!--     <s:assert test="meth = 'Enumerated'">2B-3: Not enumerated colour space</s:assert> -->
+        <!--     <s:assert test="enumCS = 'greyscale'">2B-3: Not greyscale colour space</s:assert> -->
+        <!-- </s:rule> -->
+        <preservation-case:hasObjective rdf:resource="ColourSpaceAttribute_meth_MustBeEnumerated"/>
+        <preservation-case:hasObjective rdf:resource="ColourSpaceAttribute_enumCS_MustBeGreyscale"/>
+
+        <!-- Colour depth test -->
+        <!-- <s:rule context="/jpylyzer/properties/jp2HeaderBox/imageHeaderBox"> -->
+        <!--     <s:assert test="bPCDepth = '8'">2B-3: Colour depth different from 8.</s:assert> -->
+        <!-- </s:rule> -->
+        <preservation-case:hasObjective rdf:resource="ColourDepthAttribute_bPCDepth_MustBe8"/>
+
+        <preservation-case:hasUserCommunity rdf:resource="researchers"/>
+        <preservation-case:hasContentSet rdf:resource="danish_newspapers"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ColourSpaceAttribute_meth_MustBeEnumerated">
+        <rdf:type rdf:resource="&control-policy;FORMAT_OBJECTIVE"/>
+        <skos:prefLabel>Colour space attribute 'meth' must be 'Enumerated'</skos:prefLabel>
+        <control-policy:value rdf:datatype="&xsd;string">Enumerated</control-policy:value>
+        <control-policy:measure rdf:resource="&measures;18"/>
+        <preservation-case:contentSetScope rdf:resource="danish_newspapers"/>
+        <control-policy:modality rdf:resource="&modalities;MUST"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ColourSpaceAttribute_enumCS_MustBeGreyscale">
+        <rdf:type rdf:resource="&control-policy;FORMAT_OBJECTIVE"/>
+        <skos:prefLabel>Colour space attribute 'enumCS' must be 'greyscale'</skos:prefLabel>
+        <control-policy:value rdf:datatype="&xsd;string">greyscale</control-policy:value>
+        <control-policy:measure rdf:resource="&measures;19"/>
+        <preservation-case:contentSetScope rdf:resource="danish_newspapers"/>
+        <control-policy:modality rdf:resource="&modalities;MUST"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ColourDepthAttribute_bPCDepth_MustBe8">
+        <rdf:type rdf:resource="&control-policy;FORMAT_OBJECTIVE"/>
+        <skos:prefLabel>Colour depth attribute 'bPCDepth' must be '8'</skos:prefLabel>
+        <control-policy:value rdf:datatype="&xsd;integer">8</control-policy:value>
+        <control-policy:measure rdf:resource="&measures;20"/>
+        <preservation-case:contentSetScope rdf:resource="danish_newspapers"/>
+        <control-policy:modality rdf:resource="&modalities;MUST"/>
+    </owl:NamedIndividual>
+
+    <foaf:Group rdf:about="researchers">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </foaf:Group>
+
+</rdf:RDF>    

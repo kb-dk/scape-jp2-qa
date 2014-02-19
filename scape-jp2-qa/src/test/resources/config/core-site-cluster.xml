@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>jpylyzer.executable</name>
+    <value>/usr/lib/python2.7/site-packages/jpylyzer/jpylyzer.py</value>
+  </property>
+  <property>
+    <name>jpylyzer.output.directory</name>
+    <value>/scape/shared/data/jp2-files/output/</value>
+  </property>
+  <property>
+    <name>organisation.policy</name>
+    <value>/scape/shared/data/jp2-files/statsbiblioteket_control_policy_jpeg2000.rdf</value>
+  </property>
+  <property>
+    <name>jp2extraction.splitsize</name>
+    <value>500</value>
+  </property>
+
+</configuration>

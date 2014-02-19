@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>jpylyzer.executable</name>
+    <value>jpylyzer.py</value>
+  </property>
+  <property>
+    <name>jpylyzer.output.directory</name>
+    <value>target/test-output</value>
+  </property>
+  <property>
+    <name>organisation.policy</name>
+    <value>src/test/resources/sample/statsbiblioteket_control_policy_jpeg2000.rdf</value>
+  </property>
+  <property>
+    <name>jp2extraction.splitsize</name>
+    <value>1000</value>
+  </property>
+
+</configuration>
