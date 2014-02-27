@@ -74,7 +74,7 @@ public class PolicyComparator {
 		}
 
 		if (!found)
-			warn(String.format("no matching control policy found for %s", candidate.getMeasure().getUri()));
+			info(String.format("no matching control policy found for %s", candidate.getMeasure().getUri()));
 
 		return found;
 	}
@@ -102,6 +102,7 @@ public class PolicyComparator {
 
 			//Modality
 			if(organisationalControlPolicy.getModality().compareTo(candidateControlPolicy.getModality()) != 0) {
+				match = false;
 				if(organisationalControlPolicy.getModality().equals(Modality.SHOULD))
 					warn(String.format("Modality " + doesNotMatch, organisationalControlPolicy.getModality(), candidateControlPolicy.getModality()));
 				else
@@ -109,12 +110,16 @@ public class PolicyComparator {
 			}
 			
 			//Qualifier			
-			if(organisationalControlPolicy.getQualifier().compareTo(candidateControlPolicy.getQualifier()) != 0)
+			if(organisationalControlPolicy.getQualifier().compareTo(candidateControlPolicy.getQualifier()) != 0) {
+				match = false;
 				error(String.format("Qualifier " + doesNotMatch, organisationalControlPolicy.getQualifier(), candidateControlPolicy.getQualifier()));
+			}
 			
 			//Value
-			if(organisationalControlPolicy.getValue().compareTo(candidateControlPolicy.getValue()) != 0)
+			if(organisationalControlPolicy.getValue().compareTo(candidateControlPolicy.getValue()) != 0) {
+				match = false;
 				error(String.format("Value " + doesNotMatch, organisationalControlPolicy.getValue(), candidateControlPolicy.getValue()));
+			}
 			
 		}
 		
@@ -140,11 +145,11 @@ public class PolicyComparator {
 		return match;
 	}
 	
-//	private void info(String message) {
-//		log.append("INFO ");
-//		log.append(message);
-//		log.append(String.format("%n"));
-//	}
+	private void info(String message) {
+		log.append("INFO ");
+		log.append(message);
+		log.append(String.format("%n"));
+	}
 	
 	private void warn(String message) {
 		log.append("WARN ");

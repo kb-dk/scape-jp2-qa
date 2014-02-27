@@ -23,7 +23,7 @@ public class JP2ValidationJob extends Configured implements Tool {
 
 	public int run(String[] args) throws Exception {
 		Configuration configuration = getConf();
-		Job job = new Job(configuration, "JPEG 2000 Validation");
+		Job job = Job.getInstance(configuration, "JPEG 2000 Validation");
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 

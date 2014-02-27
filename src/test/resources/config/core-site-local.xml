@@ -5,10 +5,6 @@
     <value>jpylyzer.py</value>
   </property>
   <property>
-    <name>jpylyzer.output.directory</name>
-    <value>target/test-output</value>
-  </property>
-  <property>
     <name>organisation.policy</name>
     <value>src/test/resources/sample/statsbiblioteket_control_policy_jpeg2000.rdf</value>
   </property>
