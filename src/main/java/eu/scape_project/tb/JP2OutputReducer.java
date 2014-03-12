@@ -1,9 +1,9 @@
 package eu.scape_project.tb;
 
-import java.io.IOException;
-
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
+
+import java.io.IOException;
 
 public class JP2OutputReducer extends Reducer<Text, Text, Text, Text> {
 
@@ -12,7 +12,7 @@ public class JP2OutputReducer extends Reducer<Text, Text, Text, Text> {
 
 		StringBuffer buffer = new StringBuffer();
 		for (Text text : values)
-			buffer.append(text.toString()).append(" ");
+			buffer.append(text.toString()).append("\n");
 
 		Text value = new Text(buffer.toString().trim());
 		context.write(key, value);

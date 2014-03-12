@@ -1,10 +1,5 @@
 package eu.scape_project.tb;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.LongWritable;
@@ -14,6 +9,11 @@ import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JP2ValidationTest {
 	private Text inputFilePath1 = new Text("src/test/resources/sample/adresseavisen1759-1795-06-13-01-0006.jp2");
@@ -62,7 +62,7 @@ public class JP2ValidationTest {
 		values.add(inputFilePath1);
 		driver.setReducer(new JP2OutputReducer());
 		driver.withInput(new Text("SUCCESS"), values);
-		driver.withOutput(new Text("SUCCESS"), new Text(inputFilePath1 + " " + inputFilePath1));
+		driver.withOutput(new Text("SUCCESS"), new Text(inputFilePath1 + "\n" + inputFilePath1));
 		driver.runTest();
 	}
 	
