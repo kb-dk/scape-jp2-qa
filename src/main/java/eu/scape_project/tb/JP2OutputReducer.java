@@ -10,11 +10,7 @@ public class JP2OutputReducer extends Reducer<Text, Text, Text, Text> {
 	@Override
 	protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-		StringBuffer buffer = new StringBuffer();
-		for (Text text : values)
-			buffer.append(text.toString()).append("\n");
-
-		Text value = new Text(buffer.toString().trim());
-		context.write(key, value);
+		for (Text value : values)
+			context.write(key, value);
 	}
 }

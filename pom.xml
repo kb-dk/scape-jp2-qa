@@ -113,7 +113,6 @@
                      <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
             </exclusions>
-
         </dependency>
         <dependency>
             <groupId>eu.scape-project.pw</groupId>
@@ -137,7 +136,6 @@
                      <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
             </exclusions>
-
         </dependency>
         <dependency>
             <groupId>eu.scape-project.pw</groupId>
@@ -161,9 +159,19 @@
                      <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
             </exclusions>
-
         </dependency>
-
+        <dependency>
+            <groupId>eu.scape-project.model</groupId>
+            <artifactId>scape-platform-datamodel-SB</artifactId>
+            <version>0.1.8-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.0</version>
+        </dependency>
+        
         <!-- if you are using JAVA 1.6 compiler, include these two dependencies -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
@@ -178,7 +186,6 @@
             <scope>provided</scope>
         </dependency>
         <!-- end -->
-
 
         <dependency>
             <groupId>junit</groupId>

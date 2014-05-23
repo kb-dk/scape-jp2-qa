@@ -2,7 +2,7 @@
 <configuration>
   <property>
     <name>jpylyzer.executable</name>
-    <value>jpylyzer.py</value>
+    <value>/home/runi/development/jpylyzer/build/lib.linux-x86_64-2.7/jpylyzer/jpylyzer.py</value>
   </property>
   <property>
     <name>organisation.policy</name>

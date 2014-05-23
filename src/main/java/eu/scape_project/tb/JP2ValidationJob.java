@@ -6,9 +6,9 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.NLineInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.SequenceFileAsTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
@@ -32,11 +32,8 @@ public class JP2ValidationJob extends Configured implements Tool {
 		job.setReducerClass(JP2OutputReducer.class);
 		job.setNumReduceTasks(1);
 
-		job.setInputFormatClass(NLineInputFormat.class);
-		// will split lines from input file into batches, spawning a mapper for each batch
-		int splitsize = Integer.parseInt(configuration.get(JP2ValidationConfiguration.SPLITSIZE, "500"));
-		NLineInputFormat.setNumLinesPerSplit(job, splitsize);
-		job.setOutputFormatClass(TextOutputFormat.class);
+		job.setInputFormatClass(SequenceFileAsTextInputFormat.class);
+    	job.setOutputFormatClass(SequenceFileOutputFormat.class);
 
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);

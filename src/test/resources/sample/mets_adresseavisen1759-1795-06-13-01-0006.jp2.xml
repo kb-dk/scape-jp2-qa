@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:scape="http://scape-project.eu/model" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:premis="info:lc/xmlns/premis-v2" xmlns:textmd="info:lc/xmlns/textmd-v3"
+	xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output"
+	xmlns:ns9="http://www.loc.gov/mix/v20" xmlns:gbs="http://books.google.com/gbs"
+	xmlns:vmd="http://www.loc.gov/videoMD/" xmlns:ns12="http://www.loc.gov/audioMD/"
+	xmlns:marc="http://www.loc.gov/MARC21/slim" ID="uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027"
+	OBJID="uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027" PROFILE="scape">
+	<mets:metsHdr RECORDSTATUS="NEW" />
+	<mets:dmdSec ID="DMD-3f4117c1-dedd-4598-9195-f736b78705eb">
+		<mets:mdWrap MDTYPE="Other">
+			<mets:xmlData />
+		</mets:mdWrap>
+	</mets:dmdSec>
+	<mets:dmdSec ID="DMD-0273b15f-a3f5-4484-b773-357551800ffa">
+		<mets:mdWrap MDTYPE="OTHER">
+			<mets:xmlData>
+				<scape:versionMD version-number="1" />
+			</mets:xmlData>
+		</mets:mdWrap>
+	</mets:dmdSec>
+	<mets:amdSec>
+		<mets:techMD
+			ID="TMD-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-SCAPE_REPRESENTATION_TECHNICAL">
+			<mets:mdWrap MDTYPE="OTHER">
+				<mets:xmlData />
+			</mets:mdWrap>
+		</mets:techMD>
+		<mets:techMD
+			ID="TMD-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-SCAPE_FILE_TECHNICAL">
+			<mets:mdWrap MDTYPE="OTHER">
+				<mets:xmlData />
+			</mets:mdWrap>
+		</mets:techMD>
+	</mets:amdSec>
+	<mets:fileSec>
+		<mets:fileGrp>
+			<mets:file ID="uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c029"
+				SEQ="0"
+				ADMID="TMD-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-SCAPE_FILE_TECHNICAL"
+				MIMETYPE="image/jp2">
+				<mets:FLocat
+					xlink:href="src/test/resources/sample/adresseavisen1759-1795-06-13-01-0006.jp2"
+					xlink:title="adresseavisen1759-1795-06-13-01-0006.jp2" LOCTYPE="URL" />
+			</mets:file>
+		</mets:fileGrp>
+	</mets:fileSec>
+	<mets:structMap>
+		<mets:div TYPE="Intellectual entity">
+			<mets:div ID="uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c028"
+				ADMID="TMD-uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c027-SCAPE_REPRESENTATION_TECHNICAL"
+				TYPE="Representation" xlink:label="">
+				<mets:fptr FILEID="uuid:ba6865e5-7682-4cc0-8e80-0f1ccac3c029" />
+			</mets:div>
+		</mets:div>
+	</mets:structMap>
+</mets:mets>
